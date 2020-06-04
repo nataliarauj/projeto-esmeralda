@@ -1,0 +1,86 @@
+<html>
+	<head>
+		<title> Cadastro de soros </title>
+		
+		<script href="Js/jquery.js" type="text/javascript"> </script>
+		<script href="Js/cicle.js" type="text/javascript"> </script>
+		
+		<script>
+		
+		function cadastrar(){
+			var nome = formulario.nome_hospital.value;
+			var geolocalização = formulario.geolocalização.value;
+			var soros = document.getElementById('soro').options[document.getElementById('soro').selectedIndex].innerText;
+			var quantidade = formulario.qantidade.value;
+			
+			if(nome == ""){
+			alert("Preencha o campo Hospital com o nome do estabelecimento");
+			formulario.nome.focus();
+			return false;
+			}else
+			if(geolocalização == ""){
+			alert("Preencha o campo Geolocalização com o link da localização do estabelecimento no Google Maps");
+			formulario.geolocalização.focus();
+			return false;
+			}else
+			if(soros == "Selecione"){
+			alert("Escolha um tipo de soro.");
+			formulario.soro.focus();
+			return false;
+			}else
+			if(quantidade == ""){
+			alert("Preencha o campo Quantidade com a respectiva informação.");
+			formulario.quantidade.focus();
+			return false;
+			}else{
+			
+			alert("Cadastro realizado com sucesso");
+			window.location.href = "formulario.html";
+		}
+		}
+		
+		function cancelar(){
+			alert("Obrigado pela visita!");
+			window.location.href = "formu1ario.html";
+		}
+		</script>
+		
+		
+		<style type="text/css">
+			#base{
+				margin-left: 30%;
+				float: left;
+			}
+		</style>
+	</head>
+
+
+	<body> 
+		<div id="base">
+			<form name="formulario" method="post">
+			<h2 align="center"> Cadastro de hospitais e soros </h2><br>
+				<label> Hospital: </label>
+				<input type="text" name="nome_hospital" id="nome_hospital" size="56"/><br><br>
+				<label> Geolocalização: </label>
+				<input type="text" name="geolocalização" id="geolocalização" size="50"/><br><br>
+				<label> Soro: </label>
+				<select name="soro" id="soro">
+					<option value="op1">Selecione</option>
+					<option value="op2">Soro antibotrópico</option>
+					<option value="op3">Soro anticrotálico</option>
+					<option value="op4">Soro antilaquético</option>
+					<option value="op5">Soro antielapídico</option>
+					<option value="op6">Soro antibotrópico-laquético</option>
+					<option value="op7">Soro antiaracnídico</option>
+					<option value="op8">Soro antiescorpiônico</option>
+					<option value="op9">Soro antilonomia</option>
+				</select><br><br>
+				<label> Quantidade de soro (em litros) disponível: </label>
+				<input type="number" name="quantidade" id="qantidade"/></br><br>
+				<button type="button" onclick="cadastrar()"> Cadastrar </button>
+				<button type="button" onclick="cancelar()"> Cancelar </button>
+			</form>
+		</div>
+	</body>
+
+</html>
