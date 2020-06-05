@@ -28,10 +28,10 @@
 <!doctype html>
 <html lang="pt-BR">
   <head>
-    <title>Projeto Esmeralda</title>
+    <title>Página Inicial</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="img/icon2.png" type="image/x-icon">
 
     <!-- Bootstrap CSS -->
@@ -44,41 +44,53 @@
   <body>
 
     <header>
-      <nav class="navbar fixed-top navbar-light">
-        <a class="navbar-brand" href="#">
+    <nav class="navbar fixed-top navbar-light">
+        <a class="navbar-brand" style="font-family: 'Lobster Two', cursive; font-size: x-large; color: lightgreen;" href="#">
           <img src="img/icon2.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-          Projeto
+          Projeto Esmeralda
         </a>
        
         <ul class="nav justify-content-end">
           <li class="nav-item" href="#">
-            <a href="index.html" class="nav-link">Home</a>
+            <a href="index.php" class="nav-link">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Hospitais/Clínicas</a>
+            <a class="nav-link" href="formulario.html">Hospitais/Clínicas</a>
           </li>
+         
           <li class="nav-item">
-            <a class="nav-link" href="#">Projeto</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Equipe</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contatos.html">Contatos</a>
+            <a class="nav-link" href="#myFooter">Contatos</a>
           </li>
         </ul>
       </nav>
     </header>
-     <br>
-     <br>
-     <br>
+
+    
+     
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Sobre o projeto</h1>
+          <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        </div>
+      </div>
+
+      <hr style="width:50%;border-width:0;color:gray;background-color:gray;height:2px;">
+
+      <div id="container-articles" class="container-fluid">
+              <div class="row">
+                <div class="col">
+                  <center> <h3> Soro antipeçonhento </h3> </center>   
+                  <center><p style="color: red;">Atualizado há 4 minutos</p></center>
+                </div>
+              </div>
+          </div> <br> <br>
 
     <div class='container-fluid'>
       <div class='row'>
 
         <div class='col'>
           <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="img/jararaca.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Soro AntiButropico</h5>
               <?php
@@ -90,7 +102,8 @@
                   echo("<span class='badge badge-secondary' style='background-color: red'>Não disponível</span>");
                 }}
               ?>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content. Disponível nesses hospitais:</p>
+              <p class="card-text"> Para vítimas de acidentes com jararaca, jararacuçu, urutu e cotiara.</p>
+              <p class="card-text">Disponível nos hospitais: </p>
               <?php
                 if($valorAntiButropico){
                   do{
@@ -104,7 +117,7 @@
 
         <div class='col'>
           <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="img/cascavel.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Soro Anticrotalico</h5>
               <?php
@@ -117,7 +130,8 @@
                   }
                 }
               ?>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p class="card-text">Para vítimas de acidentes com cascavel.</p>
+              <p class="card-text">Disponível nos hospitais: </p>
               <?php
                 do{
                   echo("<a href='".$valorAntiCrotalico['geolocalizacao']."'>".$valorAntiCrotalico['nome_hospital'].'</a><br>');
@@ -129,7 +143,7 @@
 
         <div class='col'>
           <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="img/surucucu.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Soro Antilaquético</h5>
               <?php
@@ -141,7 +155,8 @@
                   }
                 }
               ?>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p class="card-text">Para vítimas de acidentes com surucucu.</p>
+              <p class="card-text">Disponível nos hospitais: </p>
               <?php
               if($valorAntilaquetico){
                 do{
@@ -152,15 +167,12 @@
             </div>
           </div>
         </div>
+            </div>
 
-        
-
-      </div>
       <div class='row' style='margin-top: 2%'>
-
         <div class='col'>
           <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="img/coral.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Soro Antielapídico</h5>
               <?php
@@ -172,7 +184,8 @@
                   echo("<span class='badge badge-secondary' style='background-color: red'>Não disponível</span>");
                 }
               ?>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p class="card-text">Para vítimas de acidentes com a coral-verdadeira.</p>
+              <p class="card-text">Disponível nos hospitais: </p>
               <?php
                 if($valorAntielapidico){
                   do{
@@ -183,37 +196,12 @@
               
             </div>
           </div>
+      
         </div>
 
         <div class='col'>
           <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Soro Antibotropico-Laquetico</h5>
-              <?php
-                if($valorAntiBotropicoLaquetico = mysqli_fetch_array($resulAntibotropicoLaquetico)){
-                  if($valorAntiBotropicoLaquetico['quantidade'] > 0){
-                    echo("<span class='badge badge-secondary' style='background-color: green'>Disponível</span>");
-                  }    
-                }else{
-                  echo("<span class='badge badge-secondary' style='background-color: red'>Não disponível</span>");
-                }
-              ?>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <?php
-                if($valorAntiBotropicoLaquetico){
-                  do{
-                    echo("<a href='".$valorAntiBotropicoLaquetico['geolocalizacao']."'>".$valorAntiBotropicoLaquetico['nome_hospital'].'</a><br>');
-                  }while($valorAntiBotropicoLaquetico = mysqli_fetch_assoc($resulAntibotropicoLaquetico));
-                } 
-              ?>
-            </div>
-          </div>
-        </div>
-
-        <div class='col'>
-          <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="img/aranha.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Soro Antiaracnídico</h5>
               <?php
@@ -225,7 +213,8 @@
                   echo("<span class='badge badge-secondary' style='background-color: red'>Não disponível</span>");
                 }
               ?>
-              <p class="card-text">Some quick example text to build on</p>
+              <p class="card-text">Para vítimas de acidentes com aranha-armadeira e aranha-marrom.</p>
+              <p class="card-text">Disponível nos hospitais: </p>
                 <?php
                 if($valorAntiAracnidico){
                   do{
@@ -237,13 +226,9 @@
           </div>
         </div>
 
-        
-
-      </div>
-      <div class='row' style='margin-top: 2%'>
         <div class='col'>
           <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="img/tityus.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Soro Antiescorpiônico</h5>
               <?php
@@ -255,7 +240,8 @@
                   echo("<span class='badge badge-secondary' style='background-color: red'>Não disponível</span>");
                 }
               ?>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p class="card-text">Para vítimas de acidentes com escorpiões brasileiros do gênero Tityus.</p>
+              <p class="card-text">Disponível nos hospitais: </p>
               <?php
               if($valorAntiEscorpionico){
                 do{
@@ -266,9 +252,12 @@
             </div>
           </div>
         </div>
+
+            </div>
+  
         <div class='col'>
           <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="img/tarturana.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Soro antilonomia</h5>
               <?php
@@ -280,7 +269,8 @@
                   echo("<span class='badge badge-secondary' style='background-color: red'>Não disponível</span>");
                 }
               ?>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p class="card-text"> Para vítimas de acidentes com taturanas do gênero Lonomia.</p>
+              <p class="card-text">Disponível nos hospitais: </p>
               <?php
                 if($valorAntilonomia){
                   do{
@@ -291,66 +281,80 @@
             </div>
           </div>
         </div>
-        <div class='col'>
-          <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
+       </div> <br> <br>
+
+       <hr style="width:50%;border-width:0;color:gray;background-color:gray;height:2px;">
+       <div id="container-articles" class="container-fluid">
+              <div class="row">
+                <div class="col">
+                  <center> <h3> Cuidados </h3> </center>   
+                </div>
+              </div>
+          </div> <br> <br>
+
+          <div class="row">
+          <div class="col">
+          <div class="container">
+             <iframe width="560" height="315" src="https://www.youtube.com/embed/jOceyhhQVsA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-      </div>
-    </div>
-    <footer id="myFooter">
+          </div>
+
+          <div class="col">
+            <h4>Como prevenir acidentes com animais peçonhentos</h4>
+            <p> O risco de acidentes com animais peçonhentos pode ser reduzido tomando algumas medidas gerais e bastante simples para prevenção:</p>
+              <ul>
+                <li>Usar calçados e luvas nas atividades rurais e de jardinagem.</li>
+                <li>Examinar calçados, roupas pessoais, de cama e banho, antes de usá-las.</li>
+                <li>Afastar camas das paredes e evitar pendurar roupas fora de armários.</li>
+                <li>Não acumular entulhos e materiais de construção.</li>
+                <li>Vedar frestas e buracos em paredes, assoalhos, forros e rodapés.</li>
+                <li>Utilizar telas, vedantes ou sacos de areia em portas, janelas e ralos.</li>
+              </ul>
+          </div>
+          </div>
+          
+        
+       
+        
+        <br> <br>
+
+      <footer id="myFooter">
       <div class="container">
           <div class="row">
-              <div class="col-3">
-                  <h2 class="logo"><a href="https://programadorviking.com.br/"> LOGO </a></h2>
-              </div>
-              <div class="col-2">
-                  <h5>Inicio</h5>
+              <div class="col-sm-3">
+                  <h5>Início</h5>
                   <ul>
-                      <li><a href="https://programadorviking.com.br/">Home</a></li>
-                      <li><a href="https://bit.ly/front-end-curso-completo-promocao-01">Cursos</a></li>
-                      <li><a href="https://programadorviking.com.br/">Downloads</a></li>
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="hospitais.html">Hospitais/Clínicas</a></li>
+                      <li><a href="#">Projeto</a></li>
+                     
                   </ul>
               </div>
-              <div class="col-2">
-                  <h5>Sobre-nós</h5>
+              <div class="col-sm-3">
+                  <h5>Sobre nós</h5>
                   <ul>
-                      <li><a href="https://programadorviking.com.br/">Informações da Empresa</a></li>
-                      <li><a href="https://programadorviking.com.br/">Contato</a></li>
-                      <li><a href="https://programadorviking.com.br/">Blog</a></li>
+                      <li>Desenvolvedores:</li>
+                      <li><a href="">Francisca Natália S. Araújo</a></li>
+                      <li><a href="">Lucas Sardemberg B. Gonçalves</a></li>
+                      <li><a href="">Milleny Sawany</a></li>
                   </ul>
               </div>
-              <div class="col-2">
+              <div class="col-sm-3">
                   <h5>Suporte</h5>
                   <ul>
-                      <li><a href="https://programadorviking.com.br/">FAQ</a></li>
-                      <li><a href="https://programadorviking.com.br/">Telefones</a></li>
-                      <li><a href="https://programadorviking.com.br/">Chat</a></li>
+                      <li><a href="">f.nataliaraujoo@gmail.com</a></li>
+                      <li><a href="">lucassardem@gmail.com</a></li>
+                      <li><a href="">millenysawany@gmail.com</a></li>
                   </ul>
               </div>
-              <div class="col-3">
-                  <div class="social-networks">
-                      <a href="https://programadorviking.com.br/" class="twitter"><i class="fa fa-twitter"></i></a>
-                      <a href="https://programadorviking.com.br/" class="facebook"><i class="fa fa-facebook"></i></a>
-                      <a href="https://programadorviking.com.br/" class="instagram"><i class="fa fa-instagram"></i></a>
-                  </div>
-                  <a href="https://programadorviking.com.br/">
-                      <button type="button" class="btn btn-default">Contato</button>
-                  </a>
+              <div class="col-sm-3 info">
+                  <h5>Informações</h5>
+                  <p> Se você deseja se tornar um programador de suce </p>
               </div>
           </div>
       </div>
-      <div class="footer-copyright">
-          <p>© 2019 Copyright - Programador Viking</p>
-      </div>
   </footer>
-        
-     
+   
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
