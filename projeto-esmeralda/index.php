@@ -21,6 +21,8 @@
   $resulAntiescorpionico = mysqli_query($conexao, $querySoroAntiescorpionico) or die("Erro na checagem do soro Antiescorpionico");
   $resulAntilonomia = mysqli_query($conexao, $querySoroAntilonomia) or die("Erro na checagem do soro AntiAntilonomia");
 
+  $queryHora = "SELECT id, data_hora FROM atualizacoes ORDER BY ID DESC LIMIT 1";
+  $resulHora = mysqli_query($conexao, $queryHora) or die("Erro ao checar hora");
   $valorAntiButropico;
   $valorAntiCrotalico;
 ?>
@@ -80,7 +82,9 @@
               <div class="row">
                 <div class="col">
                   <center> <h3> Soro antipeçonhento </h3> </center>   
-                  <center><p style="color: red;">Atualizado há 4 minutos</p></center>
+                  <center><p style="color: red;"><?php  if($valorHora = mysqli_fetch_assoc($resulHora)){
+                    echo("Ultima atualização: ".$valorHora["data_hora"]);
+                    } ?></p></center>
                 </div>
               </div>
           </div> <br> <br>
@@ -105,7 +109,7 @@
               <p class="card-text"> Para vítimas de acidentes com jararaca, jararacuçu, urutu e cotiara.</p>
               <p class="card-text">Disponível nos hospitais: </p>
               <?php
-                if($valorAntiButropico){
+                if($valorAntiButropico['quantidade'] > 0){
                   do{
                     echo("<a href='".$valorAntiButropico['geolocalizacao']."'>".$valorAntiButropico['nome_hospital'].'</a><br>');
                   }while($valorAntiButropico = mysqli_fetch_assoc($resulAntiButropico));
@@ -133,9 +137,11 @@
               <p class="card-text">Para vítimas de acidentes com cascavel.</p>
               <p class="card-text">Disponível nos hospitais: </p>
               <?php
-                do{
-                  echo("<a href='".$valorAntiCrotalico['geolocalizacao']."'>".$valorAntiCrotalico['nome_hospital'].'</a><br>');
-                }while($valorAntiCrotalico = mysqli_fetch_assoc($resulAnticrotalico));
+                if($valorAntiCrotalico['quantidade'] > 0){
+                  do{
+                    echo("<a href='".$valorAntiCrotalico['geolocalizacao']."'>".$valorAntiCrotalico['nome_hospital'].'</a><br>');
+                  }while($valorAntiCrotalico = mysqli_fetch_assoc($resulAnticrotalico));
+                } 
               ?>
             </div>
           </div>
@@ -158,7 +164,7 @@
               <p class="card-text">Para vítimas de acidentes com surucucu.</p>
               <p class="card-text">Disponível nos hospitais: </p>
               <?php
-              if($valorAntilaquetico){
+              if($valorAntilaquetico['quantidade'] > 0){
                 do{
                   echo("<a href='".$valorAntilaquetico['geolocalizacao']."'>".$valorAntilaquetico['nome_hospital'].'</a><br>');
                 }while($valorAntilaquetico = mysqli_fetch_assoc($resulAntilaquetico));
@@ -187,7 +193,7 @@
               <p class="card-text">Para vítimas de acidentes com a coral-verdadeira.</p>
               <p class="card-text">Disponível nos hospitais: </p>
               <?php
-                if($valorAntielapidico){
+                if($valorAntielapidico['quantidade'] > 0){
                   do{
                     echo("<a href='".$valorAntielapidico['geolocalizacao']."'>".$valorAntielapidico['nome_hospital'].'</a><br>');
                   }while($valorAntielapidico = mysqli_fetch_assoc($resulAntielapidico));
@@ -216,7 +222,7 @@
               <p class="card-text">Para vítimas de acidentes com aranha-armadeira e aranha-marrom.</p>
               <p class="card-text">Disponível nos hospitais: </p>
                 <?php
-                if($valorAntiAracnidico){
+                if($valorAntiAracnidico['quantidade'] > 0){
                   do{
                     echo("<a href='".$valorAntiAracnidico['geolocalizacao']."'>".$valorAntiAracnidico['nome_hospital'].'</a><br>');
                   }while($valorAntiAracnidico = mysqli_fetch_assoc($resulAntiAntiaracnidico));
@@ -243,7 +249,7 @@
               <p class="card-text">Para vítimas de acidentes com escorpiões brasileiros do gênero Tityus.</p>
               <p class="card-text">Disponível nos hospitais: </p>
               <?php
-              if($valorAntiEscorpionico){
+              if($valorAntiEscorpionico['quantidade'] > 0){
                 do{
                   echo("<a href='".$valorAntiEscorpionico['geolocalizacao']."'>".$valorAntiEscorpionico['nome_hospital'].'</a><br>');
                 }while($valorAntiEscorpionico = mysqli_fetch_assoc($resulAntiescorpionico));
@@ -272,7 +278,7 @@
               <p class="card-text"> Para vítimas de acidentes com taturanas do gênero Lonomia.</p>
               <p class="card-text">Disponível nos hospitais: </p>
               <?php
-                if($valorAntilonomia){
+                if($valorAntilonomia['quantidade'] > 0){
                   do{
                     echo("<a href='".$valorAntilonomia['geolocalizacao']."'>".$valorAntilonomia['nome_hospital'].'</a><br>');
                   }while($valorAntilonomia = mysqli_fetch_assoc($resulAntilonomia));
