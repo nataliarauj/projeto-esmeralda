@@ -1,4 +1,4 @@
-<?php
+﻿<?php
   include('conexao.php');
 
   $querySoroAntiButropico = "select* from soros where soro = 'Soro antibotrópico'";
@@ -59,20 +59,22 @@
           <li class="nav-item">
             <a class="nav-link" href="formulario.html">Hospitais/Clínicas</a>
           </li>
-         
           <li class="nav-item">
-            <a class="nav-link" href="#myFooter">Contatos</a>
+            <a class="nav-link" href="contatos.html">Contatos</a>
           </li>
+          <li class="nav-item">
+					<a class="nav-link" href="#myFooter">Sobre</a>
+				  </li>
         </ul>
       </nav>
     </header>
 
     
-     
+    <main> 
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
           <h1 class="display-4">Sobre o projeto</h1>
-          <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+          <p class="lead">Projeto realizado com intuito de facilitar a busca por medicações (soros) antipeçonhento, a fim de diminuir os índices de complicações após o acidente. A ideia veio após o caso da Maria Elza Esmeralda Cavalcante, de 72 anos, residente de Assaré, que foi a óbito após ser picada por uma cobra cascavel.</p>
         </div>
       </div>
 
@@ -89,10 +91,10 @@
               </div>
           </div> <br> <br>
 
-    <div class='container-fluid'>
+    <div class="container-fluid">
       <div class='row'>
 
-        <div class='col'>
+      <div class='col-sm'>
           <div class="card" style="width: 18rem;">
             <img src="img/jararaca.jpg" class="card-img-top" alt="...">
             <div class="card-body">
@@ -119,7 +121,7 @@
           </div>
         </div>
 
-        <div class='col'>
+        <div class='col-sm'>
           <div class="card" style="width: 18rem;">
             <img src="img/cascavel.jpg" class="card-img-top" alt="...">
             <div class="card-body">
@@ -147,7 +149,7 @@
           </div>
         </div>
 
-        <div class='col'>
+        <div class='col-sm'>
           <div class="card" style="width: 18rem;">
             <img src="img/surucucu.jpg" class="card-img-top" alt="...">
             <div class="card-body">
@@ -176,7 +178,7 @@
             </div>
 
       <div class='row' style='margin-top: 2%'>
-        <div class='col'>
+        <div class='col-sm'>
           <div class="card" style="width: 18rem;">
             <img src="img/coral.jpg" class="card-img-top" alt="...">
             <div class="card-body">
@@ -205,7 +207,7 @@
       
         </div>
 
-        <div class='col'>
+        <div class='col-sm'>
           <div class="card" style="width: 18rem;">
             <img src="img/aranha.jpg" class="card-img-top" alt="...">
             <div class="card-body">
@@ -226,13 +228,15 @@
                   do{
                     echo("<a href='".$valorAntiAracnidico['geolocalizacao']."'>".$valorAntiAracnidico['nome_hospital'].'</a><br>');
                   }while($valorAntiAracnidico = mysqli_fetch_assoc($resulAntiAntiaracnidico));
+                }else if($valorAntiAracnidico == null){
+                  echo('');
                 }
               ?>
             </div>
           </div>
         </div>
 
-        <div class='col'>
+        <div class='col-sm'>
           <div class="card" style="width: 18rem;">
             <img src="img/tityus.jpg" class="card-img-top" alt="...">
             <div class="card-body">
@@ -261,7 +265,7 @@
 
             </div>
   
-        <div class='col'>
+        <div class='col-sm'>
           <div class="card" style="width: 18rem;">
             <img src="img/tarturana.jpg" class="card-img-top" alt="...">
             <div class="card-body">
@@ -298,14 +302,12 @@
               </div>
           </div> <br> <br>
 
-          <div class="row">
-          <div class="col">
-          <div class="container">
-             <iframe width="560" height="315" src="https://www.youtube.com/embed/jOceyhhQVsA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-          </div>
 
+          <div class="container-fluid">
+          <div class="row" >
+            <div class="col-sm">
           <div class="col">
+          
             <h4>Como prevenir acidentes com animais peçonhentos</h4>
             <p> O risco de acidentes com animais peçonhentos pode ser reduzido tomando algumas medidas gerais e bastante simples para prevenção:</p>
               <ul>
@@ -317,49 +319,71 @@
                 <li>Utilizar telas, vedantes ou sacos de areia em portas, janelas e ralos.</li>
               </ul>
           </div>
+              </div>
+                
+              <div class="col-sm">
+          <div class="col">
+          <div class="container">
+             <iframe width="560" height="315" src="https://www.youtube.com/embed/jOceyhhQVsA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
           </div>
-          
+          </div>
+          </div>
+          </div>
         
-       
-        
+             </main>
+      
         <br> <br>
 
-      <footer id="myFooter">
-      <div class="container">
-          <div class="row">
-              <div class="col-sm-3">
-                  <h5>Início</h5>
-                  <ul>
-                      <li><a href="index.html">Home</a></li>
-                      <li><a href="hospitais.html">Hospitais/Clínicas</a></li>
-                      <li><a href="#">Projeto</a></li>
+        <div class="container-fluid">
+        <footer id="myFooter">
+            <div class="container">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h5>Início</h5>
+                    <ul>
+                      <li><a href="index.php">Home</a></li>
+                      <li><a href="formulario.html">Hospitais/Clínicas</a></li>
+                      <li><a href="#myFooter">Contato</a></li>
+                    </ul>
+                  </div>
+                    <div class="col-sm-3">
+                        <h5>Desenvolvedores</h5>
+                        <ul>
+                            <li>Francisca Natália S. Araújo</li>
+                            <li>Lucas Sardemberg B. Gonçalves</li>
+                            <li>Milleny Sawany S. Nascimento</li>
+                          
+                        </ul>
+                    </div>
+                  <div class="col-sm-3">
+                    <h5>Orientadores</h5>
+                    <ul>
+                      <li>Alcides Tomaz</li>
+                      <li>Josniel Pires</li>
+                      <li>Ronis Uchôa</li>
+                    </ul>
+                  </div>
+                    <div class="col-sm-3">
+                      <h5>Informações</h5>
+                      <ul>
+                      <li>EEEP Governador Virgílio Távora</li>
+                      <li><a href="https://goo.gl/maps/WsdL4uBGKjr7PPzLA">Rua Pergentino Silva, S/N</a></li>
+                      <li></li>
+                      </ul>
                      
-                  </ul>
-              </div>
-              <div class="col-sm-3">
-                  <h5>Sobre nós</h5>
-                  <ul>
-                      <li>Desenvolvedores:</li>
-                      <li><a href="">Francisca Natália S. Araújo</a></li>
-                      <li><a href="">Lucas Sardemberg B. Gonçalves</a></li>
-                      <li><a href="">Milleny Sawany</a></li>
-                  </ul>
-              </div>
-              <div class="col-sm-3">
-                  <h5>Suporte</h5>
-                  <ul>
-                      <li><a href="">f.nataliaraujoo@gmail.com</a></li>
-                      <li><a href="">lucassardem@gmail.com</a></li>
-                      <li><a href="">millenysawany@gmail.com</a></li>
-                  </ul>
-              </div>
-              <div class="col-sm-3 info">
-                  <h5>Informações</h5>
-                  <p> Se você deseja se tornar um programador de suce </p>
-              </div>
-          </div>
-      </div>
-  </footer>
+                    </div>
+
+                   
+                </div>
+            </div>
+            <div class="second-bar">
+               <div class="container">
+                    <h4 class="logo">  © 2020 todos os direitos reservados </h4>
+                </div>
+            </div>
+        </footer>
+        </div>
    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

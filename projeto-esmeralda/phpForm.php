@@ -25,7 +25,7 @@
         
         $resul = mysqli_query($conexao, $queryInsercao) or die('Erro na inserção do sistema');
 
-        $queryInsercaoHora = "insert into atualizacoes(data hora) values('$agora')";
+        $queryInsercaoHora = "insert into atualizacoes(data_hora) values('$agora')";
         $resulHora = mysqli_query($conexao,$queryInsercaoHora) or die("Erro na inserção do horário");
         echo("<script type='text/javascript' language='javascript'>alert('cadastro realidado com sucesso, Obrigado por fortalecer nossa causa!'); window.location.href='formulario.html'</script>");
     }
